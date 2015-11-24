@@ -1,0 +1,99 @@
+body {
+	font: 62.5%/1 arial, helvetica, sans-serif;
+}
+
+#page {
+	font-size: 0.8rem;
+}
+
+.site-title a {
+	/*background: url('logo.png') no-repeat top left;*/
+	background: url('http://lorempixel.com/g/60/60/') no-repeat top left;
+	padding-left: 67px;
+	min-height: 54px;
+	padding-top: 6px;
+	display: block;
+	color: #4b1a1a;
+	text-decoration: none;;;
+}
+
+h1.site-title {
+  margin: 0px;
+  width: 320px;
+  float: left;
+}
+
+h2.site-description {
+  margin-left: 65px;
+  margin-top: -22px;
+  clear: both;
+  float: left;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.biopanel {
+	max-width: 680px;
+	padding: 3px 20px 0px 0px;;
+}
+
+.biopanel h2 {
+	margin: 0;
+	background-color: rgb(231, 231, 231);
+	cursor: pointer;
+	padding: 10px 5px;
+	border-radius: 8px;;
+}
+
+.panelcontent {
+	text-align: justify;
+	padding: 10px 0px 10px 20px;
+}
+
+header {position: relative; max-width: 680px}
+.connect {position: absolute; right: 0px; top: 30px; }
+
+.site-main {
+	clear: both;
+	float: left;
+	width: 100%;
+}
+
+#projects {
+	padding-left: 0;
+	list-style-type: none;
+	margin-left: 0px;
+}
+
+.project {
+	min-height: 200px;
+	padding-left: 10px;
+	border-left: 1px solid #ccc;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	margin: 10px;
+	padding: 10px;
+	
+}
+
+.project h3 {
+
+}
+
+.project img {
+	float: right;
+
+}
+
+ul.project-details {
+  max-width: 450px;
+  float: left;
+}
+
+.plabel {
+	display: inline-block;
+	margin-right: 8px;
+	font-weight: bold;
+	font-size: smaller;;
+
+}
