@@ -82,11 +82,15 @@ h2 span.fa {
 
 
 .project {
-	clear: both;
 	float: left;
-	width: 100%;
+	width: 30%;
+	margin: 10px;
+	border: 1px solid #eee;
 	list-style-type: none;
-	margin: 10px 0;
+}
+
+.project h3 {
+	text-align: center;
 }
 
 .project img {
@@ -99,19 +103,19 @@ h2 span.fa {
 }
 
 .project-details {
-	float: right;
 	width: 78%;
 	margin-top: 10px;
+	padding-left: 22%;
 	list-style-type: lower-greek;
 }
 
 .project-images {
-	width: 22%;
+	text-align: center;
 }
 
 .plabel {
 	width: 16%;
-	display: inline-block;
+	display: none;
 }
 
 .url {
