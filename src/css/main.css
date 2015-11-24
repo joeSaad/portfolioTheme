@@ -17,6 +17,10 @@ h1 a:hover {
 	text-decoration: none;
 }
 
+.biopanel {
+    clear: both;
+}
+
 .biopanel h2 {
 	margin: 0;
 	cursor: pointer;
@@ -37,6 +41,14 @@ h2 span.glyphicon {
 
 h2.expanded {
 	border-bottom: 1px solid;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+h2 span.fa {
+    width: 6%;
+    font-size: 2.5rem;
 }
 
 .connect {
@@ -97,6 +109,24 @@ h2.expanded {
 	width: 22%;
 }
 
+.plabel {
+	width: 16%;
+	display: inline-block;
+}
+
+.url {
+    background: antiquewhite;
+    padding: 0 5px;
+    border: 1px;
+    border-radius: 5px;
+}
+
+.fa-ellipsis-v, .fa-minus {
+    display: none;
+}
+
+
+
 
 /* Document level adjustments */
 /*html {
@@ -130,6 +160,10 @@ h2.expanded {
 
 a {
 	color: #4b1a1a;
+}
+
+a:hover {
+	text-decoration: none;
 }
 
 .site-title {
@@ -167,10 +201,6 @@ p {
 	/*font-size: 1rem;*/
 }
 
-.plabel {
-	width: 16%;
-	display: inline-block;
-}
 
 
 .red {

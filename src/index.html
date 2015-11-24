@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Joe Saad - Software Engineer</title>
+    <title>My Name</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <!-- <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
     <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat|Raleway|Arimo|Poiret+One|Dosis|Varela+Round|Questrial|Comfortaa|Varela|Mallanna' rel='stylesheet' type='text/css'> -->
@@ -19,31 +19,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
 
-    <style>
-        .biopanel {
-            clear: both;
-        }
-        h2 {
-            font-size: 1.4rem;
-        }
-        h2 span.fa {
-            width: 6%;
-            font-size: 2.5rem;
-        }
-
-        .url {
-            background: antiquewhite;
-            padding: 0 5px;
-            border: 1px;
-            border-radius: 5px;
-        }
-        
-        .fa-ellipsis-v, .fa-minus {
-            display: none;
-        }
-
-    </style>
-
 </head>
 
 <body>
@@ -56,6 +31,7 @@
                                 <img src="images/logo.png" alt="">
                             </a>                
                         </h1>
+
                     <h1 class="site-description">Joe Saad</h1>
                      <p>Software Engineer / UI Architect</p>
                     <div class="connect pull-right">
@@ -138,7 +114,7 @@
                                             </div>
                                             <ul class="project-details">
                                                 <li><span class="plabel">Completed</span><span class="pdata">2002</span></li>
-                                                <li><span class="plabel">URL</span><span class="pdata url">http://joeSaad.net</span></li>
+                                                <li><span class="plabel">URL</span><span class="pdata url"><a href="http://joeSaad.net" title="diffEnvs">http://joeSaad.net</a></span></li>
                                                 <li><span class="plabel">Activities</span><span class="pdata">
                                                     Developement of Chrome Extension, Design and Implementation Engineering
                                                 </span></li>
@@ -146,8 +122,8 @@
                                         </li>
                                     </ul>
                                     
-                                    <span class="fa fa-minus"></span>
-                                    <span class="fa fa-ellipsis-v"></span>
+                                    <a href="#" title="Collapse"><span class="fa fa-minus"></span></a>
+                                    <a href="#" title="See More Projects"><span class="fa fa-ellipsis-v"></span></a>
 
                                 </div>
                             </div>
@@ -185,20 +161,22 @@
     });
 
     $('.panelcontent:last').show();*/
-    $(".fancybox").fancybox();
+    $(".fancybox").fancybox({padding: 0});
 
     if ($('li.project').length > 1) {
         $('li.project:gt(0)').hide();
         $('.fa-ellipsis-v').show();
     };
 
-    $('.fa-ellipsis-v').click(function(){
+    $('.fa-ellipsis-v').click(function(e){
+        e.preventDefault();
         $('li.project:gt(0)').show();
         $(this).hide();
         $('.fa-minus').show();
     });
 
-    $('.fa-minus').click(function(){
+    $('.fa-minus').click(function(e){
+        e.preventDefault();
         $('li.project:gt(0)').hide();
         $('.fa-ellipsis-v').show();
         $(this).hide();
