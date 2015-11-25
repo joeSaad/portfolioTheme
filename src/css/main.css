@@ -23,7 +23,6 @@ h1 a:hover {
 
 .biopanel h2 {
 	margin: 0;
-	cursor: pointer;
 	padding: 5px;
 	border-bottom: 1px solid #ccc;
 }
@@ -59,10 +58,18 @@ h2 span.fa {
     float: left;
     list-style-type: none;
     width: 10%;
-    padding: 0 2px;
     margin: 0;
     font-size: 1.6rem;
+    border: 1px solid saddlebrown;
+    text-align: center;
     /*border: 1px solid saddlebrown;*/
+}
+
+
+.connect-list a {
+	width: 100%;
+	display: inline-block;
+	cursor: hand;
 }
 
 @media(max-width:767px){
@@ -79,15 +86,31 @@ h2 span.fa {
 	}
 }
 
+#projects {
+    padding-left: 0;
+}
 
+.project-details {
+	list-style-type: none;
+}
+
+.project-details li { 
+    padding-left: 1em; 
+    text-indent: -.7em;
+}
+
+.project-details li:before {
+    content: "■ ";
+    color: #ccc; /* or whatever color you prefer */
+}
 
 .project {
 	float: left;
 	width: 100%;
-	margin: 10px;
 	border: 1px solid #eee;
 	list-style-type: none;
 	clear: both;
+	margin: 10px;
 }
 
 .project h3 {
@@ -104,7 +127,6 @@ h2 span.fa {
 }
 
 .project-details {
-	list-style-type: disc;
 	float: left;
 	width: 68%;
 	margin-top: 10px;
