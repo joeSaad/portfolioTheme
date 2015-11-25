@@ -47,8 +47,8 @@ h2 {
     font-size: 1.4rem;
 }
 h2 span.fa {
-    width: 6%;
     font-size: 2.5rem;
+    margin-right: 15px;
 }
 
 .connect {
@@ -83,14 +83,15 @@ h2 span.fa {
 
 .project {
 	float: left;
-	width: 30%;
+	width: 100%;
 	margin: 10px;
 	border: 1px solid #eee;
 	list-style-type: none;
+	clear: both;
 }
 
 .project h3 {
-	text-align: center;
+	padding-left: 3%;
 }
 
 .project img {
@@ -103,13 +104,15 @@ h2 span.fa {
 }
 
 .project-details {
-	width: 78%;
+	list-style-type: disc;
+	float: left;
+	width: 68%;
 	margin-top: 10px;
-	padding-left: 22%;
-	list-style-type: lower-greek;
 }
 
 .project-images {
+	width: 18%;
+	float: left;
 	text-align: center;
 }
 
