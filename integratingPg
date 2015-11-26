@@ -43,7 +43,7 @@
                                             ?>
                                                 <li>
                                                     <a href="<?php the_sub_field('connectContent'); ?>">
-                                                        <span class="fa <?php the_sub_field('connectContent') ?>"></span>
+                                                        <span class="fa <?php the_sub_field('connectType') ?>"></span>
                                                     </a>
                                                 </li>
                                             <?php   endwhile; ?>

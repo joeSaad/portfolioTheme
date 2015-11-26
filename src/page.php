@@ -16,108 +16,70 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
-			<?php /* The loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<header class="entry-header">
-						<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
-						<div class="entry-thumbnail">
-							<?php the_post_thumbnail(); ?>
-						</div>
-						<?php endif; ?>
-
-						<h1 class="entry-title"><?php the_title(); ?></h1>
-					</header><!-- .entry-header -->
-
 					<div class="entry-content">		
-					
+				
+
 					<?php
-						// check if the repeater field has rows of data
 						if( have_rows('panel') ):
-						 	// loop through the rows of data
-						    while ( have_rows('panel') ) : the_row();
-							// display a sub field value							     
-							?>							           
-						        <h2><?php the_sub_field('panelheader'); ?></h2>
-						        <div class="panelcontent">
-						        	<?php the_sub_field('panelcontent'); ?>
-						        </div>
-						        </li>
-					<?php   endwhile;
-						else :
-						    // no rows found
-						endif;
-					?>
+							while ( have_rows('panel') ) : the_row(); ?>
+								<?php if (trim(get_sub_field('panelheader')) === "projects" ) : ?>
+									<div class="biopanel">
+		                                <h2>
+		                                	<span class="fa <?php the_sub_field('paneltype') ?>"></span>
+		                                	<?php the_sub_field('panelheader'); ?>
+		                                </h2>
+										<?php if(have_rows('project')) : ?>
+											<div class="panelcontent">
+												<ul id="projects">
+													<?php while (have_rows('project')) : the_row() ; ?>
+													<li class="project">
+														<h3><?php the_sub_field('project_title')?></h3>
+														<div class="project-images">
+                                            				<a href="#proj1" class="fancybox" rel="group">
+                                                				<img src="http://placehold.it/80x70" alt="project 1">
+                                            				</a>
+                                        				</div>
+                                    					<ul class="project-details">
+                                            				<li><span class="plabel">Completed</span><span class="pdata"><?php the_sub_field('project_year') ?></span></li>
+                                            				<li><span class="plabel">URL</span><span class="pdata url"><a href="<?php the_sub_field('project_url') ?>" target="_blank"><?php the_sub_field('project_url') ?></a></span></li>
+                                            				<li><span class="plabel">Activities</span><span class="pdata">
+                                                				<?php the_sub_field('project_activities')?>
+                                            				</span></li>
+                                        				</ul>
+													</li>
+								       			<?php endwhile; ?>
+								       			</ul>
+								        	</div>
+								        <?php endif; ?>
+								    </div>
+								<?php else : ?>
+									<div class="biopanel">
+		                                <h2>
+		                                	<span class="fa <?php the_sub_field('paneltype') ?>"></span>
+		                                	<?php the_sub_field('panelheader'); ?>
+		                                </h2>
+								        <div class="panelcontent">
+								        	<?php the_sub_field('panelcontent'); ?>							        	
+								        </div>
+								    </div>
+									
+								<?php endif; ?>
+								
+								
+								
 
-<style>
-	.techset {
-		clear: both;
-	}
-	.techset li {float: left; clear: both; border: 1px solid #ccc; max-width: 530px;}
-	.techset .tech-type {float: left;}
-	.techset li div.tech-name {
-		float: left;
-	}
-	.techset .tech-type {float: left; margin-right: 10px; border: 1px solid red;}
-
-</style>
-					
-					<?php
-						// check if the repeater field has rows of data
-						if( have_rows('techset') ):
+								
+							
+							<?php   endwhile;
+								else :
+								    // no rows found
+								endif;
 							?>
-							<ul class="techset">
-										<?php
-									 	// loop through the rows of data
-									    while ( have_rows('techset') ) : the_row();
-										// display a sub field value							     
-										?>
-											
-											<li>
-										        <div class="tech-type"><?php the_sub_field('techType'); ?></div>
-										        <div class="tech-name">
-										        	<?php the_sub_field('techName'); ?>
-										        </div>
-									        </li>
-								<?php   endwhile;					?>
-							</ul>
-					<?php
-						    // no rows found
-						endif;
-					?>
-					
-					<div style="clear:both;"></div>
-					<ul>						
-						<?php
-							// check if the repeater field has rows of data
-							if( have_rows('project') ):
-							 	// loop through the rows of data
-							    while ( have_rows('project') ) : the_row();
-								// display a sub field value							     
-								?>							           
-							        <li>
-							        	<?php the_sub_field('title'); ?>
-							        	<i><?php the_sub_field('year'); ?></i> 
-							        </li>
-						<?php   endwhile;
-							else :
-							    // no rows found
-							endif;
-						?>
-					</ul>
+
+
 					</div><!-- .entry-content -->
-
-					<footer class="entry-meta">
-						<?php edit_post_link( __( 'Edit', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?>
-					</footer><!-- .entry-meta -->
-				</article><!-- #post -->
-
-				<?php comments_template(); ?>
-			<?php endwhile; ?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

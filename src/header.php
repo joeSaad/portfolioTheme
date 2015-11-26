@@ -247,9 +247,16 @@ p {
 }
 
 
+.blue {
+	background: blue;
+	width: 200px;
+	height: 200px;
+}
 
 .red {
-	color: red;
+	background: red;
+	width: 200px;
+	height: 200px;
 }
 	
 	</style>
@@ -279,20 +286,25 @@ p {
 
                     <h1 class="site-description">Joe Saad</h1>
                      <p>Software Engineer / UI Architect</p>
-                    <div class="connect pull-right">
-                        <ul class="connect-list">
-                            <li><a href="#"><span class="glyphicon glyphicon glyphicon-phone"></span></a></li>
-                            <li><a href="#"><span class="fa fa-envelope"></span></a></li>
-                            <li><a href="#"><span class="fa fa-github"></span></a></li>
-                            <li><a href="#"><span class="fa fa-instagram"></span></a></li>
-                            <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                            <li><a href="#"><span class="fa fa-chrome"></span></a></li>
-                            <li><a href="#"><span class="fa fa-jsfiddle"></span></a></li>
-                            <li><a href="#"><span class="fa fa-wordpress"></span></a></li>
-                            <li><a href="#"><span class="fa fa-stack-overflow"></span></a></li>
-                        </ul>
-                    </div>
+					                        <?php
+                                if( have_rows('connect') ): ?>
+                                <div class="connect pull-right">
+                                    <ul class="connect-list">
+                                        <?php    while ( have_rows('connect') ) : the_row();
+                                            ?>
+                                                <li>
+                                                    <a href="<?php the_sub_field('connectcontent'); ?>" target="_blank">
+                                                        <span class="fa <?php the_sub_field('connecttype') ?>"></span>
+                                                    </a>
+                                                </li>
+                                            <?php   endwhile; ?>
+                                    </ul>
+                                </div>
+                                    <?php else :
+                                    // no rows found
+                                    endif;
+                        ?>
+
                 </header>
 
 		<div id="main" class="site-main">
