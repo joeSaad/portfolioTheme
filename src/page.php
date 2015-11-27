@@ -17,7 +17,6 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 
 					<div class="entry-content">		
-				
 
 					<?php
 						if( have_rows('panel') ):
@@ -37,6 +36,7 @@ get_header(); ?>
 														<div class="project-images">
                                             				<a href="#proj1" class="fancybox" rel="group">
                                                 				<img src="http://placehold.it/80x70" alt="project 1">
+                                                				<img src="<?php the_sub_field('project_thumbnail') ?>" alt="project 1">
                                             				</a>
                                         				</div>
                                     					<ul class="project-details">
@@ -81,5 +81,11 @@ get_header(); ?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
+
+	<div id="projectImages">
+		<?php while (have_rows('project')) : the_row() ; ?>
+			<img src="<?php the_sub_field('project_image') ?>" />
+		<?php endwhile; ?>
+	</div>
 
 <?php get_footer(); ?>

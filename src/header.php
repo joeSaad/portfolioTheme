@@ -279,13 +279,13 @@ p {
 
                 <header>
                     <h1 class="site-title">
-                            <a href="">
-                                <img src="images/logo.png" alt="">
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                                <img src="images/logo.png" alt="<?php the_title(); ?>">
                             </a>                
-                        </h1>
+                    </h1>
 
-                    <h1 class="site-description">Joe Saad</h1>
-                     <p>Software Engineer / UI Architect</p>
+                    <h1 class="site-description"><?php the_title(); ?></h1>
+                     <p><?php bloginfo( 'description' ); ?></p>
 					                        <?php
                                 if( have_rows('connect') ): ?>
                                 <div class="connect pull-right">
