@@ -23,11 +23,17 @@ get_header(); ?>
 							while ( have_rows('panel') ) : the_row(); ?>
 								<?php if (trim(get_sub_field('panelheader')) === "projects" ) : ?>
 									<div class="biopanel">
-		                                <h2>
-		                                	<span class="fa <?php the_sub_field('paneltype') ?>"></span>
-		                                	<?php the_sub_field('panelheader'); ?>
-		                                </h2>
+		                                <div class="panelheading">
+		                                	<h2>
+		                                		<span class="fa <?php the_sub_field('paneltype') ?>"></span>
+		                                		<?php the_sub_field('panelheader'); ?>
+		                                	</h2>
+		                                </div>
 										<?php if(have_rows('project')) : ?>
+											<?php
+                                        					$projectPictures = [];
+
+                                        				?>
 											<div class="panelcontent">
 												<ul id="projects">
 													<?php while (have_rows('project')) : the_row() ; ?>
@@ -39,6 +45,10 @@ get_header(); ?>
                                                 				<img src="<?php the_sub_field('project_thumbnail') ?>" alt="project 1">
                                             				</a>
                                         				</div>
+                                        				<?php
+                                        					$projectPictures[] = get_sub_field('project_image');
+                                        				?>
+
                                     					<ul class="project-details">
                                             				<li><span class="plabel">Completed</span><span class="pdata"><?php the_sub_field('project_year') ?></span></li>
                                             				<li><span class="plabel">URL</span><span class="pdata url"><a href="<?php the_sub_field('project_url') ?>" target="_blank"><?php the_sub_field('project_url') ?></a></span></li>
@@ -54,10 +64,12 @@ get_header(); ?>
 								    </div>
 								<?php else : ?>
 									<div class="biopanel">
-		                                <h2>
-		                                	<span class="fa <?php the_sub_field('paneltype') ?>"></span>
-		                                	<?php the_sub_field('panelheader'); ?>
-		                                </h2>
+		                                <div class="panelheading">
+		                                	<h2>
+		                                		<span class="fa <?php the_sub_field('paneltype') ?>"></span>
+		                                		<?php the_sub_field('panelheader'); ?>
+		                                	</h2>
+		                                </div>
 								        <div class="panelcontent">
 								        	<?php the_sub_field('panelcontent'); ?>							        	
 								        </div>
@@ -83,9 +95,20 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 	<div id="projectImages">
-		<?php while (have_rows('project')) : the_row() ; ?>
-			<img src="<?php the_sub_field('project_image') ?>" />
-		<?php endwhile; ?>
+			
+		<?php
+			foreach ($projectPictures as $pictureURL) {?>
+				<img src="<?php echo $pictureURL ?>" >
+		<?php
+		}
+		?>
+
+
 	</div>
+
+
+	<?php
+	//	print_r(array_values($projectPictures));
+	 ?>
 
 <?php get_footer(); ?>

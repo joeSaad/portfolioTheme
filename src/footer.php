@@ -18,15 +18,15 @@
 
 			<?php //get_sidebar( 'main' ); ?>
 
-			<?php the_field('footer') ?>
+			
 
 			<div class="site-info">
-
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentythirteen' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentythirteen' ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentythirteen' ), 'WordPress' ); ?></a>
+				<?php the_field('footer') ?>
+				
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->
 	</div><!-- #page -->
 
-	<?php wp_footer(); ?>
+	<? // php wp_footer(); ?>
 </body>
 </html>

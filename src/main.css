@@ -1,0 +1,266 @@
+	body {
+	    /*font-family: 'Roboto', sans-serif;*/
+	    font-family: 'Mallanna', sans-serif;
+	    background-color: #eaeaea;
+
+	}
+
+
+	#page {
+	    background-color: #fff;
+	    box-shadow: 0 1 px 1 px 1 px# ddd;
+	    max-width: 768 px;
+	    margin: 0 auto;
+	}
+
+	h1 a:hover {
+	    text-decoration: none;
+	}
+
+	.biopanel {
+	    clear: both;
+	}
+
+	.biopanel h2 {
+	    margin: 0;
+	    /*padding: 5px;*/
+	    /*border-bottom: 1px solid #ccc;*/
+	}
+
+	.panelcontent {
+	    margin: 20 px 0;
+	    padding: 0 10 px;
+	}
+
+	h2 span.glyphicon {
+	    color: #ddd;
+	    font-size: smaller;
+	    margin-right: 5 px
+	}
+
+	h2.expanded {
+	    border-bottom: 1 px solid;
+	}
+
+	h2 {
+	    font-size: 1.4 rem;
+	}
+	h2 span.fa {
+	    font-size: 2.5 rem;
+	    margin-right: 15 px;
+	}
+
+	.connect {
+	    width: 40 % ;
+	}
+
+	.connect-list li {
+	    float: left;
+	    list-style-type: none;
+	    width: 10 % ;
+	    margin: 0;
+	    font-size: 1.6 rem;
+	    border: 1 px solid saddlebrown;
+	    text-align: center;
+	    /*border: 1px solid saddlebrown;*/
+	}
+
+
+	.connect-list a {
+	    width: 100 % ;
+	    display: inline-block;
+	    cursor: hand;
+	}
+
+	@media(max-width: 767 px) {
+		#page {
+
+	    }
+	    .connect {
+	        width: 100 % ;
+	    }
+	    .connect-list li {
+	        width: 10 % ;
+	        margin: 0 12 px;
+	        font-size: 35 px;
+	    }
+	}
+
+	#projects {
+	    padding-left: 0;
+	}
+
+	.project-details {
+	    list-style-type: none;
+	}
+
+	.project-details li {
+	    padding-left: 1e m;
+	    text-indent: -.7e m;
+	}
+
+	.project-details li: before {
+	    content: "■ ";
+	    color: #ccc; /* or whatever color you prefer */
+	}
+
+	.project {
+	    float: left;
+	    width: 100 % ;
+	    border: 1 px solid# eee;
+	    list-style-type: none;
+	    clear: both;
+	    margin: 10 px;
+	}
+
+	.project h3 {
+	    padding-left: 3 % ;
+	}
+
+	.project img {
+	    margin: 10 px 0;
+	    clear: left;
+	    max-width: 100 % ;
+	    height: auto;
+	    border-radius: 3 px;
+	    border: 1 px;
+	}
+
+	.project-details {
+	    float: left;
+	    width: 68 % ;
+	    margin-top: 10 px;
+	}
+
+	.project-images {
+	    width: 18 % ;
+	    float: left;
+	    text-align: center;
+	}
+
+	.plabel {
+	    width: 16 % ;
+	    display: none;
+	}
+
+	.url {
+	    background: antiquewhite;
+	    padding: 0 5 px;
+	    border: 1 px;
+	    border-radius: 5 px;
+	}
+
+	.fa-ellipsis-v, .fa-minus {
+	    display: none;
+	}
+
+
+
+
+	/* Document level adjustments */
+	/*html {
+	  font-size: 17px;
+	}*/
+	@media(max-width: 900 px) {
+	    html {
+	        font-size: 15 px;
+	    }
+	}
+	@media(max-width: 400 px) {
+	    html {
+	        font-size: 15 px;
+	    }
+	}
+
+	@media(max-width: 768 px) {
+	    html, body {
+	        font-size: 20 px;
+	    }
+	    #page {
+	        max-width: 100 % ;
+	    }
+	}
+
+	/*@media (max-width: 768px) {
+		html, body { 
+			font-size: 23px;
+			background: #fff;
+		}
+		#page {
+		    max-width: 100%;	    
+		}
+	}*/
+
+	a {
+	    color: #4b1a1a;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.site-title {
+	text-align: center;
+}
+
+# projectImages {
+	        display: none;
+	    }
+
+	    @media(max-width: 414 px) {
+	        .project-details {
+	                float: left;
+	                width: 100 % ;
+	            }
+	            .project-images {
+	                float: none;
+	                width: 100 % ;
+	            }
+
+	    }
+
+	    /* Type will scale with document */
+	        h1 {
+	        font-size: 3 rem;
+	    }
+	    h2 {
+	        font-size: 2.5 rem;
+	    }
+	    h3 {
+	        font-size: 2 rem;
+	    }
+	    p {
+	        text-align: justify;
+	        /*font-size: 1rem;*/
+	    }
+
+
+	    .blue {
+	        background: blue;
+	        width: 200 px;
+	        height: 200 px;
+	    }
+
+	    .red {
+	        background: red;
+	        width: 200 px;
+	        height: 200 px;
+	    }
+
+
+	    h2 {
+	        text-decoration: none;
+	        display: inline-block;
+	        border-bottom: 3 px solid transparent;
+	        width: 0 px;
+	        transition: 0.5 s ease;
+	        white-space: nowrap;
+	    }
+	    .biopanel: hover h2 {
+	        border-bottom: 2 px solid #4b1a1a;
+    width: 100%;
+}
+
+.panelheading {
+	border-bottom: 1px solid # ccc;
+	    }
