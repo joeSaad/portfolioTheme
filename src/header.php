@@ -13,9 +13,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
-	<style>
-	
-	</style>
 
 
     <!-- <link rel="stylesheet" href="css/scss/style.scss"> -->
@@ -24,6 +21,8 @@
     <!-- fancybox -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+    <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 
     
 </head>

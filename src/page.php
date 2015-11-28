@@ -40,17 +40,24 @@ get_header(); ?>
 													<li class="project">
 														<h3><?php the_sub_field('project_title')?></h3>
 														<div class="project-images">
-                                            				<a href="#proj1" class="fancybox" rel="group">
 
-                                            				<?php $image = get_sub_field('project_thumbnail'); ?>
-                                                				<!-- <img src="http://placehold.it/80x70" alt="project 1"> -->
-                                                				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" />
-                                                				<!-- <img src="<?php // the_sub_field('project_thumbnail') ?>" alt=""> -->
-                                            				</a>
+																<?php while (have_rows('project_thumbnails')) : the_row() ; ?>
+																	<?php $image = get_sub_field('project_thumbnail_img'); ?>														
+	                                            					<a href="#<?php echo $image['title']; ?>" class="fancybox" rel="group">
+
+	                                                					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" />
+	                                                					<!-- <img src="<?php // the_sub_field('project_thumbnail') ?>" alt=""> -->
+	                                            					</a>
+	                                            					
+	                                            				<?php endwhile; ?>
+
+																<?php while (have_rows('project_images')) : the_row() ;
+																	$projectPictures[] = get_sub_field('project_image');
+																endwhile; ?>
+
+
                                         				</div>
-                                        				<?php
-                                        					$projectPictures[] = get_sub_field('project_image');
-                                        				?>
+                                        				
 
                                     					<ul class="project-details">
                                             				<li><span class="plabel">Completed</span><span class="pdata"><?php the_sub_field('project_year') ?></span></li>
@@ -121,7 +128,7 @@ get_header(); ?>
 			
 		<?php
 			foreach ($projectPictures as $pictureURL) {?>
-				<img src="<?php echo $pictureURL ?>" >
+				<img id="<?php echo $pictureURL['title'] ?>" src="<?php echo $pictureURL['url'] ?>" >
 		<?php
 		}
 		?>

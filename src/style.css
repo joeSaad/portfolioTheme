@@ -97,15 +97,15 @@ h2 span.fa {
 	list-style-type: none;
 }
 
-.project-details li { 
+/*.project-details li { 
     padding-left: 1em; 
     text-indent: -.7em;
-}
+}*/
 
-.project-details li:before {
+/*.project-details li:before {
     content: "■ ";
-    color: #ccc; /* or whatever color you prefer */
-}
+    color: #ccc; 
+}*/
 
 .project {
 	float: left;
@@ -147,10 +147,10 @@ h2 span.fa {
 }
 
 .url {
-    background: antiquewhite;
+/*    background: antiquewhite;
     padding: 0 5px;
     border: 1px;
-    border-radius: 5px;
+    border-radius: 5px;*/
 }
 
 .fa-ellipsis-v, .fa-minus {
