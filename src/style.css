@@ -81,6 +81,8 @@ h2 span.fa {
 	}
 	.connect {
 		width: 100%;
+		border-bottom: 1px double #eaeaea;
+    	margin-bottom: 23px;
 	}
 	.connect-list li {
 		width: 10%;
@@ -114,7 +116,20 @@ h2 span.fa {
 	list-style-type: none;
 	clear: both;
 	margin: 10px;
+	-webkit-transition : border 500ms ease-out; 
+ 	-moz-transition : border 500ms ease-out;
+ 	-o-transition : border 500ms ease-out;
 }
+
+/*.project:hover {
+    background: #F9ECEC;
+}*/
+
+.project:hover {
+	border: 1px solid #000;
+}
+
+
 
 .project h3 {
 	padding-left: 3%;
@@ -151,6 +166,7 @@ h2 span.fa {
     padding: 0 5px;
     border: 1px;
     border-radius: 5px;*/
+    word-wrap: break-word;
 }
 
 .fa-ellipsis-v, .fa-minus {
@@ -176,9 +192,36 @@ h2 span.fa {
 		font-size: 20px; 
 	}
 	#page {
-		max-width: 100%;
+		width: 100%;
 	}
 }
+
+/*@media (max-width: 374px){
+	#page {
+    	width: 499px;
+    }
+}
+
+@media (max-width: 667px) {
+	#page {
+    	width: 380px;
+    }
+}*/
+
+/*@media only screen  and (min-device-width : 375px)  and (max-device-width : 667px) { 
+	#page {
+    	width: 380px;
+    }	
+}
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px)  and (orientation : landscape) { 
+	#page {
+    	width: 499px;
+    }
+}*/
+
+
+
+
 
 /*@media (max-width: 768px) {
 	html, body { 
@@ -282,6 +325,7 @@ height: calc(100% - 1px);
 .site-footer {
 	margin: 10px -15px 0;
     padding: 15px 15px 5px;
-    background: #eaeaea;
+    /*background: #eaeaea;*/
+    border-top: 1px solid #aaa;
 }
 
