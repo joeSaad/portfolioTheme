@@ -41,8 +41,11 @@ get_header(); ?>
 														<h3><?php the_sub_field('project_title')?></h3>
 														<div class="project-images">
                                             				<a href="#proj1" class="fancybox" rel="group">
-                                                				<img src="http://placehold.it/80x70" alt="project 1">
-                                                				<img src="<?php the_sub_field('project_thumbnail') ?>" alt="project 1">
+
+                                            				<?php $image = get_sub_field('project_thumbnail'); ?>
+                                                				<!-- <img src="http://placehold.it/80x70" alt="project 1"> -->
+                                                				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" />
+                                                				<!-- <img src="<?php // the_sub_field('project_thumbnail') ?>" alt=""> -->
                                             				</a>
                                         				</div>
                                         				<?php
@@ -51,7 +54,27 @@ get_header(); ?>
 
                                     					<ul class="project-details">
                                             				<li><span class="plabel">Completed</span><span class="pdata"><?php the_sub_field('project_year') ?></span></li>
-                                            				<li><span class="plabel">URL</span><span class="pdata url"><a href="<?php the_sub_field('project_url') ?>" target="_blank"><?php the_sub_field('project_url') ?></a></span></li>
+
+															<?php 
+																$number_of_hrefs = count( get_sub_field( 'project_url' ) );
+																//echo the_sub_field('project_url');
+																//echo the_sub_field('project_href');
+																//echo count(get_sub_field('project_url'));
+																//echo $number_of_hrefs;
+																if($number_of_hrefs === 1 ) : ?>
+																	<?php while (have_rows('project_url')) : the_row() ; ?>
+                                            							<li><span class="plabel">URL</span><span class="pdata url"><a href="<?php the_sub_field('project_href') ?>" target="_blank"><?php the_sub_field('project_href') ?></a></span></li>
+                                            						<?php endwhile; ?>
+                                            					<?php else: ?>
+                                            						<li>
+                                            							<ul>
+                                            								<?php while (have_rows('project_url')) : the_row() ; ?>
+																				<li><span class="plabel">URL</span><span class="pdata url"><a href="<?php the_sub_field('project_href') ?>" target="_blank"><?php the_sub_field('project_href') ?></a></span></li>
+                                            								<?php endwhile; ?>
+                                            							</ul>
+                                            						</li>
+                                            					<?php endif; ?>
+                                            				<li><span class="plabel">Description</span><span class="pdata"><?php the_sub_field('project_description') ?></span></li>
                                             				<li><span class="plabel">Activities</span><span class="pdata">
                                                 				<?php the_sub_field('project_activities')?>
                                             				</span></li>

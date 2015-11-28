@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Name</title>
+    <title><?php the_title(); ?></title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <!-- <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
     <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat|Raleway|Arimo|Poiret+One|Dosis|Varela+Round|Questrial|Comfortaa|Varela|Mallanna' rel='stylesheet' type='text/css'> -->
