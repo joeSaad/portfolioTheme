@@ -116,19 +116,19 @@ h2 span.fa {
 	list-style-type: none;
 	clear: both;
 	margin: 10px;
-	-webkit-transition : border 500ms ease-out; 
+	/*-webkit-transition : border 500ms ease-out; 
  	-moz-transition : border 500ms ease-out;
- 	-o-transition : border 500ms ease-out;
+ 	-o-transition : border 500ms ease-out;*/
 }
 
 /*.project:hover {
     background: #F9ECEC;
 }*/
 
-.project:hover {
+/*.project:hover {
 	border: 1px solid #000;
 }
-
+*/
 
 
 .project h3 {
