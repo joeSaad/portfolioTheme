@@ -180,6 +180,14 @@ h2 span.fa {
 /*html {
   font-size: 17px;
 }*/
+@media (min-width: 900px){
+	.biopanel:hover h2 {
+	    border-bottom: 1px solid #4b1a1a;
+	    width: 100%;
+	}
+
+}
+
 @media (max-width: 900px) {
   html { font-size: 15px; }
 }
@@ -253,6 +261,7 @@ a:hover {
 	.project-details {
 		float: left;
 		width: 100%;
+		padding: 15px;
 	}
 	.project-images {
 		float: none;
@@ -305,10 +314,6 @@ h2 {
 
 
 
-.biopanel:hover h2 {
-    border-bottom: 1px solid #4b1a1a;
-    width: 100%;
-}
 
 .biopanel:hover .panelheading {
 /*	border: none;*/
