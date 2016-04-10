@@ -54,14 +54,10 @@ h2 span.fa {
     margin-right: 15px;
 }
 
-.connect {
-	width: 40%;
-}
-
 .connect-list li {
     float: left;
     list-style-type: none;
-    width: 10%;
+    width: 1.6em;
     margin: 0;
     font-size: 1.6rem;
     text-align: center;
